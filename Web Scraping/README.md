@@ -441,7 +441,7 @@ df.corr(method = 'spearman', numeric_only = True)
 
 ### Exploratory Visualizations
 
-Importing the `matplotlib` library for visualization
+Importing the `matplotlib` library for visualization:
 ```python
 # Importing matplotlib for visualization
 
@@ -471,6 +471,11 @@ Finally, outputting the DataFrame into a .CSV file:
 
 df.to_csv(r'C:\Users\Nicolas\Documents\Work\SQL\Data Cleaning\Companies.csv', index = False)
 ```
+## Power BI Dashboard
+
+Here is the Power BI Dashboard I created with this dataset after preparation and additional cleaning in Power Query:
+
+
 
 
 
