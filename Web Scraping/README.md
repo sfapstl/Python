@@ -2,7 +2,9 @@
 
 In this project, I scraped data from a webpage containing a list of the 100 largest companies in the United States by revenue.
 
-First, I imported the BeautifulSoup and Requests libraries for web scraping.
+![Table: 100 largest U.S. companies by revenue](3.png)
+
+First, I imported the `BeautifulSoup` and `Requests` libraries for web scraping.
 
 ```python
 from bs4 import BeautifulSoup
@@ -14,7 +16,7 @@ soup = BeautifulSoup(page.text, 'html')
 print(soup)
 ```
 
-After printing `soup`, I notice that the table I need is enclosed in a `<table>` tag. I then locate the table in the html containing the needed data.
+After printing `soup`, I notice that the table I need is enclosed in a `<table>` tag. I then locate the table in the HTML containing the needed data.
 
 ```python
 # Locate table containing needed data
@@ -44,7 +46,7 @@ soup.find_all('table')[1]
 .
 .
 ```
-The table is in the first `[1]` position using find_all. I turn this result into the `table` variable.
+The table is in the first `[1]` position using `find_all`. I turn this result into the `table` variable.
 
 ```python
 # Isolate the table containing the needed data
@@ -53,7 +55,7 @@ table = soup.find_all('table')[1]
 
 print(table)
 ```
-In the HTML file, the column names are enclosed in `<th>` tags
+In the HTML, the column names are enclosed in `<th>` tags.
 ```python
 # Locate the column names
 
@@ -87,7 +89,7 @@ print(world_table_titles)
 
 ['Rank', 'Name', 'Industry', 'Revenue (USD millions)', 'Revenue growth', 'Employees', 'Headquarters']
 ```
-Then I import the pandas library to assign the column names to a DataFrame
+Then I import the pandas library to assign the column names to a DataFrame:
 ```python
 # Import pandas to assign column names to a DataFrame
 
@@ -194,7 +196,9 @@ The data seems to have been inputted into the DataFrame successfully.
 
 ## Exploratory Data Cleaning
 
-The data still needs to be cleaned and prepared for analysis and visualization later in Power BI. For example, the numerical values contain special characters.
+The data still needs to be cleaned and prepared for analysis and visualization later in Power BI. 
+
+For example, the numerical values contain special characters.
 ```python
 # Remove special characters from columns with numeric values
 
@@ -207,11 +211,11 @@ df.head()
 ```
 | Rank | Name                | Industry                    | Revenue (USD millions) | Revenue growth | Employees | Headquarters           |
 |------|---------------------|-----------------------------|------------------------|----------------|-----------|------------------------|
-| 1    | Walmart             | Retail                      | 611,289                | 6.7            | 2,100,000 | Bentonville, Arkansas |
-| 2    | Amazon              | Retail and cloud computing | 513,983                | 9.4            | 1,540,000 | Seattle, Washington   |
-| 3    | ExxonMobil          | Petroleum industry          | 413,680                | 44.8           | 62,000    | Spring, Texas          |
-| 4    | Apple               | Electronics industry        | 394,328                | 7.8            | 164,000   | Cupertino, California |
-| 5    | UnitedHealth Group  | Healthcare                  | 324,162                | 12.7           | 400,000   | Minnetonka, Minnesota |
+| 1    | Walmart             | Retail                      | 611289                | 6.7            | 2100000 | Bentonville, Arkansas |
+| 2    | Amazon              | Retail and cloud computing | 513983                | 9.4            | 1540000 | Seattle, Washington   |
+| 3    | ExxonMobil          | Petroleum industry          | 413680                | 44.8           | 62000    | Spring, Texas          |
+| 4    | Apple               | Electronics industry        | 394328                | 7.8            | 164000   | Cupertino, California |
+| 5    | UnitedHealth Group  | Healthcare                  | 324162                | 12.7           | 400000   | Minnetonka, Minnesota |
 
 Now, checking the column data types.
 ```python
@@ -261,11 +265,11 @@ df.head()
 ```
 | Rank | Name                | Industry                    | Revenue (USD millions) | Revenue growth | Employees | Headquarters           |
 |------|---------------------|-----------------------------|------------------------|----------------|-----------|------------------------|
-| 1    | Walmart             | Retail                      | 611,289                | 6.7%           | 2,100,000 | Bentonville, Arkansas |
-| 2    | Amazon              | Retail and cloud computing | 513,983                | 9.4%           | 1,540,000 | Seattle, Washington   |
-| 3    | ExxonMobil          | Petroleum industry          | 413,680                | 44.8%          | 62,000    | Spring, Texas          |
-| 4    | Apple               | Electronics industry        | 394,328                | 7.8%           | 164,000   | Cupertino, California |
-| 5    | UnitedHealth Group  | Healthcare                  | 324,162                | 12.7%          | 400,000   | Minnetonka, Minnesota |
+| 1    | Walmart             | Retail                      | 611289                | .067           | 2100000 | Bentonville, Arkansas |
+| 2    | Amazon              | Retail and cloud computing | 513983                | .094           | 1540000 | Seattle, Washington   |
+| 3    | ExxonMobil          | Petroleum industry          | 413680                | .448          | 62000    | Spring, Texas          |
+| 4    | Apple               | Electronics industry        | 394328                | .078           | 164000   | Cupertino, California |
+| 5    | UnitedHealth Group  | Healthcare                  | 324162                | .127          | 400000   | Minnetonka, Minnesota |
 
 ```python
 # Drop the 'Rank' column, unnecessary for analysis
@@ -276,11 +280,11 @@ df.head()
 ```
 | Name                | Industry                    | Revenue (USD millions) | Revenue growth | Employees | Headquarters           |
 |---------------------|-----------------------------|------------------------|----------------|-----------|------------------------|
-| Walmart             | Retail                      | 611,289                | 6.7%           | 2,100,000 | Bentonville, Arkansas |
-| Amazon              | Retail and cloud computing | 513,983                | 9.4%           | 1,540,000 | Seattle, Washington   |
-| ExxonMobil          | Petroleum industry          | 413,680                | 44.8%          | 62,000    | Spring, Texas          |
-| Apple               | Electronics industry        | 394,328                | 7.8%           | 164,000   | Cupertino, California |
-| UnitedHealth Group | Healthcare                  | 324,162                | 12.7%          | 400,000   | Minnetonka, Minnesota |
+| Walmart             | Retail                      | 611289                | .067           | 2100000 | Bentonville, Arkansas |
+| Amazon              | Retail and cloud computing | 513983                | .094           | 1540000 | Seattle, Washington   |
+| ExxonMobil          | Petroleum industry          | 413680                | .448          | 62000    | Spring, Texas          |
+| Apple               | Electronics industry        | 394328                | .078           | 164000   | Cupertino, California |
+| UnitedHealth Group | Healthcare                  | 324162                | .127          | 400000   | Minnetonka, Minnesota |
 
 ```python
 # Extract the states only from the 'Headquarters' column
@@ -291,11 +295,11 @@ df.head()
 ```
 | Name                | Industry                    | Revenue (USD millions) | Revenue growth | Employees | Headquarters |
 |---------------------|-----------------------------|------------------------|----------------|-----------|--------------|
-| Walmart             | Retail                      | 611,289                | 6.7%           | 2,100,000 | Arkansas     |
-| Amazon              | Retail and cloud computing | 513,983                | 9.4%           | 1,540,000 | Washington   |
-| ExxonMobil          | Petroleum industry          | 413,680                | 44.8%          | 62,000    | Texas        |
-| Apple               | Electronics industry        | 394,328                | 7.8%           | 164,000   | California   |
-| UnitedHealth Group | Healthcare                  | 324,162                | 12.7%          | 400,000   | Minnesota    |
+| Walmart             | Retail                      | 611289                | .067           | 2100000 | Arkansas     |
+| Amazon              | Retail and cloud computing | 513983                | .094           | 1540000 | Washington   |
+| ExxonMobil          | Petroleum industry          | 413680                | .448          | 62000    | Texas        |
+| Apple               | Electronics industry        | 394328                | .078           | 164000   | California   |
+| UnitedHealth Group | Healthcare                  | 324162                | .127          | 400000   | Minnesota    |
 
 ```python
 # Add new column 'Revenue per employee'
@@ -306,11 +310,11 @@ df.head()
 ```
 | Name                | Industry                    | Revenue (USD millions) | Revenue growth | Employees | Headquarters | Revenue per employee |
 |---------------------|-----------------------------|------------------------|----------------|-----------|--------------|----------------------|
-| Walmart             | Retail                      | 611,289                | 6.7%           | 2,100,000 | Arkansas     | 0.29                 |
-| Amazon              | Retail and cloud computing | 513,983                | 9.4%           | 1,540,000 | Washington   | 0.33                 |
-| ExxonMobil          | Petroleum industry          | 413,680                | 44.8%          | 62,000    | Texas        | 6.67                 |
-| Apple               | Electronics industry        | 394,328                | 7.8%           | 164,000   | California   | 2.40                 |
-| UnitedHealth Group | Healthcare                  | 324,162                | 12.7%          | 400,000   | Minnesota    | 0.81                 |
+| Walmart             | Retail                      | 611289                | .067           | 2100000 | Arkansas     | 0.29                 |
+| Amazon              | Retail and cloud computing | 513983                | .094           | 1540000 | Washington   | 0.33                 |
+| ExxonMobil          | Petroleum industry          | 413680                | .448          | 62000    | Texas        | 6.67                 |
+| Apple               | Electronics industry        | 394328                | .078           | 164000   | California   | 2.40                 |
+| UnitedHealth Group | Healthcare                  | 324162                | .127          | 400000   | Minnesota    | 0.81                 |
 
 ## Exploratory Data Analysis
 
@@ -324,7 +328,7 @@ df_sorted.head(1)
 ```
 | Name    | Industry | Revenue (USD millions) | Revenue growth | Employees | Headquarters | Revenue per employee |
 |---------|----------|------------------------|----------------|-----------|--------------|----------------------|
-| Walmart | Retail   | 611,289                | 6.7%           | 2,100,000 | Arkansas     | 0.29                 |
+| Walmart | Retail   | 611289                | .067           | 2100000 | Arkansas     | 0.29                 |
 
 ```python
 # Getting the company with the least employees
@@ -335,7 +339,7 @@ df_sorted.head(1)
 ```
 | Name       | Industry           | Revenue (USD millions) | Revenue growth | Employees | Headquarters | Revenue per employee |
 |------------|--------------------|------------------------|----------------|-----------|--------------|----------------------|
-| PBF Energy | Petroleum industry | 46,830                 | 0.718          | 3,616     | New Jersey   | 12.95                |
+| PBF Energy | Petroleum industry | 46830                 | 0.718          | 3616     | New Jersey   | 12.95                |
 
 ```python
 # Getting the average revenue
