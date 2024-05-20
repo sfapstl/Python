@@ -16,7 +16,7 @@ soup = BeautifulSoup(page.text, 'html')
 print(soup)
 ```
 
-After printing `soup`, I notice that the table I need is enclosed in a `<table>` tag. I then locate the table in the HTML containing the needed data.
+After printing `soup`, I noticed that the table I need is enclosed in a `<table>` tag. I then locate the table in the HTML containing the needed data.
 
 ```python
 # Locate table containing needed data
