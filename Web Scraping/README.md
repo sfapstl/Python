@@ -1,6 +1,6 @@
 # Python Web Scraping Project
 
-In this project, I scraped data from a webpage containing a list of the 100 largest companies in the United States.
+In this project, I scraped data from a webpage containing a list of the 100 largest companies in the United States by revenue.
 
 First, I imported the BeautifulSoup and Requests libraries for web scraping.
 
@@ -437,7 +437,7 @@ df.corr(method = 'spearman', numeric_only = True)
 
 ### Exploratory Visualizations
 
-Importing matplotlib for visualization
+Importing the `matplotlib` library for visualization
 ```python
 # Importing matplotlib for visualization
 
@@ -450,7 +450,7 @@ df.plot(kind = 'scatter', x = 'Revenue (USD millions)', y = 'Employees')
 
 plt.show()
 ```
-
+![Scatter Plot: Revenue vs. No. of Employees](1.png)
 ```python
 # Revenue growth vs No. of Employees
 
@@ -458,6 +458,7 @@ df.plot(kind = 'scatter', x = 'Revenue growth', y = 'Employees')
 
 plt.show()
 ```
+![Scatter Plot: Revenue growth vs. No. of Employees](2.png)
 
 Finally, outputting the DataFrame into a .CSV file:
 
