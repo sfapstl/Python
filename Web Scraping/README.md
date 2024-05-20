@@ -475,7 +475,4 @@ df.to_csv(r'C:\Users\Nicolas\Documents\Work\SQL\Data Cleaning\Companies.csv', in
 
 Here is the Power BI Dashboard I created with this dataset after preparation and additional cleaning in Power Query:
 
-
-
-
-
+![Web Scraping Power BI Dashboard](4.png)
