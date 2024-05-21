@@ -16,7 +16,7 @@ soup = BeautifulSoup(page.text, 'html')
 print(soup)
 ```
 
-After printing `soup`, I noticed that the table I need is enclosed in a `<table>` tag. I then locate the table in the HTML containing the needed data.
+After printing `soup`, I noticed that the table I need is enclosed in a `<table>` tag. I then located the table in the HTML containing the needed data.
 
 ```python
 # Locate table containing needed data
@@ -46,7 +46,7 @@ soup.find_all('table')[1]
 .
 .
 ```
-The table is in the first `[1]` position using `find_all`. I turn this result into the `table` variable.
+The table is in the first `[1]` position using `find_all`. I turned this result into the `table` variable.
 
 ```python
 # Isolate the table containing the needed data
@@ -89,7 +89,7 @@ print(world_table_titles)
 
 ['Rank', 'Name', 'Industry', 'Revenue (USD millions)', 'Revenue growth', 'Employees', 'Headquarters']
 ```
-Then I import the pandas library to assign the column names to a DataFrame:
+Then I imported the pandas library to assign the column names to a DataFrame:
 ```python
 # Import pandas to assign column names to a DataFrame
 
