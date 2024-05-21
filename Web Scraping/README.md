@@ -318,7 +318,7 @@ df.head()
 
 ## Exploratory Data Analysis
 
-I conduct exploratory data analysis to preliminarily investigate the data, spotting patterns and relationships, before visualizing in Power BI.
+I conducted exploratory data analysis to preliminarily investigate the data, spotting patterns and relationships, before visualizing in Power BI.
 ```python
 # Getting the company with the most employees
 
